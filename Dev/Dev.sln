@@ -3,6 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{850F0640-BB52-44DD-AA23-BC531AD0BFDA}"
+	ProjectSection(SolutionItems) = preProject
+		..\.env = ..\.env
+		..\.env.example = ..\.env.example
+		..\.gitattributes = ..\.gitattributes
+		..\.gitignore = ..\.gitignore
+		..\artisan = ..\artisan
+		..\composer.json = ..\composer.json
+		..\composer.lock = ..\composer.lock
+		..\Gantt project planner1.xlsx = ..\Gantt project planner1.xlsx
+		..\gulpfile.js = ..\gulpfile.js
+		..\package.json = ..\package.json
+		..\phpunit.xml = ..\phpunit.xml
+		..\README.md = ..\README.md
+		..\server.php = ..\server.php
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
