@@ -1,8 +1,5 @@
 # Instyle.social
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
 Instyle.social (Name may be subject to changes), is a webpage being developed by me as my final degree´s project.
 
