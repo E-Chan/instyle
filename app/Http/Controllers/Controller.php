@@ -1,9 +1,8 @@
-<?php namespace App\Http\Controllers;
+<?php
 
-class TestController extends Controller 
+namespace app\Http\Controllers;
+
+abstract class Controller extends BaseController
 {
-    public function testFunction()
-    {
-        return "It works";
-    }
+    use DispatchesJobs, ValidatesRequests;
 }

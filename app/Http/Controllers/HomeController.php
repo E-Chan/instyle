@@ -1,7 +1,10 @@
 <?php
-namespace instyle\http\Controllers
 
-class HomeControler extends Controller
+namespace app\Http\Controllers;
+class HomeController extends BaseController
 {
-    
+    public function index()
+    {
+        return view('home');
+    }
 }
