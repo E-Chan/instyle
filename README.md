@@ -1,4 +1,4 @@
-![alt tag](https://raw.github.com/E-Chan/instyle/blob/master/public/logo.png)
+![alt tag](/public/logo.png)
 
 Instyle.social (Name may be subject to changes), is a webpage being developed by me as my final degree´s project.
 
