@@ -18,7 +18,7 @@
            @endif 
             <ul class="nav navbar-nav navbar-right">
                @if (Auth::check()) 
-                    <li><a href="#">E-Chan42</a></li>
+                    <li><a href="#">{{ Auth::user()->getUsername() }}</a></li>
                     <li><a href="#">Editar perfil</a></li>
                     <li><a href="{{ route('auth.signout')}}">Cerrar Sesión</a></li>
                @else 

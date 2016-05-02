@@ -15,6 +15,6 @@ I'll be using Laravel Framework wich includes pretty much all the needs that a s
 - [x] Push a presentable landing page
 - [x] Build the DB
 - [x] Prepare a user registry and login
-- [x] To be continued
+- [ ] Allow users to add other users as friends
 
 
