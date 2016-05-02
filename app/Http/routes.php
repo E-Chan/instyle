@@ -18,7 +18,8 @@ Route::get('/alert', function() {
 /*----------*/
 Route::get('/signup',[
     'uses'  => '\Instyle\Http\Controllers\AuthController@getSignup',
-    'as'    => 'auth.signup'
+    'as'    => 'auth.signup',
+    'middleware' => ['guest']
     ]);
 
 Route::post('/signup',[
