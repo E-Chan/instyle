@@ -24,15 +24,18 @@ Route::get('/signup',[
 
 Route::post('/signup',[
     'uses'  => '\Instyle\Http\Controllers\AuthController@postSignup',
+    'middleware' => ['guest']
     ]);
 
 Route::get('/signin',[
     'uses'  => '\Instyle\Http\Controllers\AuthController@getSignin',
-    'as'    => 'auth.signin'
+    'as'    => 'auth.signin',
+    'middleware' => ['guest']
     ]);
 
 Route::post('/signin',[
     'uses'  => '\Instyle\Http\Controllers\AuthController@postSignin',
+    'middleware' => ['guest']
     ]);
 
 Route::get('/signout',[
