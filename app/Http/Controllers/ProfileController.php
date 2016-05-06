@@ -14,7 +14,8 @@ class ProfileController extends Controller
         if(!$user){
             abort(404);
         }
-        return view('profile.index');
+        return view('profile.index')
+            ->with('user',$user);
 
     }
 }
