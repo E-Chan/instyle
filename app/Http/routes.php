@@ -50,6 +50,15 @@ Route::get('/signout',[
 /*----------*/
 
 Route::get('/search',[
-'uses'=> '\Instyle\Http\Controllers\SearchController@getResults',
-'as' => 'search.results',
+    'uses'=> '\Instyle\Http\Controllers\SearchController@getResults',
+    'as' => 'search.results',
+    ]);
+
+  /*---------------*/
+ /*--Userprofile--*/
+/*---------------*/
+
+Route::get('/user/{username}', [
+    'uses'=> '\Instyle\Http\Controllers\ProfileController@getProfile',
+    'as' => 'profile.index',
     ]);
