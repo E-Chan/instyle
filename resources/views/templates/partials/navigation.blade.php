@@ -18,6 +18,7 @@
            @endif 
             <ul class="nav navbar-nav navbar-right">
                @if (Auth::check()) 
+                    <li><img vspace="5"height="40px" class="media-object" alt="{{ Auth::user()->getUsername() }}" src="{{Auth::user()->getAvatarUrl()}}"></li>
                     <li><a href="{{ route('profile.index', ['username' => Auth::user()->username]) }}">{{ Auth::user()->getUsername() }}</a></li>
                     <li><a href="#">Editar perfil</a></li>
                     <li><a href="{{ route('auth.signout')}}">Cerrar Sesión</a></li>
