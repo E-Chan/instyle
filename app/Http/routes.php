@@ -6,12 +6,14 @@
 /*----------*/
 Route::get('', [
     'uses'  => '\Instyle\Http\Controllers\HomeController@index',
-    'as'    => 'home'
+    'as'    => 'home',
+    //'middleware' => ['guest'] 
     ]);
 
 Route::get('/alert', function() {
     return redirect()->route('home')->with('info', 'Cuenta registrada!')    ;
 });
+
 
   /*----------*/
  /*---Auth---*/
