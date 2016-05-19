@@ -9,7 +9,7 @@
             <div class="col-md-6">
                 <div class="row" id="newPost">
                     <h3> New post </h3>
-                    <form style="margin: 0; padding=0;" action="#">
+                    <form style="margin: 0; padding=0;" action="#" v-on:submit="postStatus">
                         <div class="form-group" style="white-space: normal">
                             <textarea class="form-control"  cols="35" rows="2" maxlength="600" placeholder="¿Que estilo luces hoy?" required></textarea>
                         </div>

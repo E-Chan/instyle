@@ -1,4 +1,9 @@
 new Vue({
-    el:'#timeline'
-
+    el:'#timeline',
+    methods: {
+        postStatus : function (e) {
+            e.preventDefault();
+            console.log('posted');
+        }
+    }
 });
