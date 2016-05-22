@@ -11,7 +11,7 @@
                     <h3> New post </h3>
                     <form style="margin: 0; padding=0;" action="#" v-on:submit="postStatus">
                         <div class="form-group" style="white-space: normal">
-                            <textarea class="form-control"  cols="35" rows="2" maxlength="600" placeholder="¿Que estilo luces hoy?" required v-model="post"></textarea>
+                            <textarea class="form-control"  cols="35" rows="2" maxlength="600" placeholder="¿Que estilo luces hoy?" v-model="post"></textarea>
                         </div>
                     </form>
                         <button style="display: inline;" type="button" class="btn-lg btn-default">

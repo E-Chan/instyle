@@ -64,3 +64,9 @@ Route::get('/user/{username}', [
     'uses'=> '\Instyle\Http\Controllers\ProfileController@getProfile',
     'as' => 'profile.index',
     ]);
+
+
+Route::group(['middleware' => ['web', 'auth']], function () {
+    Route::get('home', 'TimelineController@index');
+    Route::post('/posts', 'PostController@create');
+});
