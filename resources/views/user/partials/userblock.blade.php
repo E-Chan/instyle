@@ -6,5 +6,13 @@
         <h4 class="media-heading"><a href="{{ route('profile.index', ['username' => $user->username]) }}">{{ $user->getUsername() }}</a></h4>
         @if ($user->location)<p>{{ $user->location}}</p>
         @endif
+
+        @if (Auth::user()->isNot($user))
+            @if (Auth::user()->isFollowing($user))
+                <p>Unfollow</p>
+            @else
+                <p>Follow</p>
+            @endif
+        @endif
     </div>
 </div>

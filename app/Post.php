@@ -9,11 +9,15 @@ class Post extends Model
 {
     protected $fillable = ['body'];
 
-//    protected $appends = ['humanCreatedAt'];
+    protected $appends = ['relativeCreatedAt'];
 
     public function user()
     {
         return $this->belongsTo('Instyle\User');
+    }
+    public function getRelativeCreatedAtAttribute()
+    {
+        return $this->created_at->diffForHumans();
     }
 
  }

@@ -1,5 +1,3 @@
-
-
 new Vue({
     el: '#timeline',
     data: {
@@ -8,6 +6,7 @@ new Vue({
         limit: 2,
         total: 0
     },
+
     methods: {
         postStatus: function (e) {
             e.preventDefault();
@@ -22,7 +21,10 @@ new Vue({
             }).success(function (data) {
                 this.post = '';
                 this.posts.unshift(data);
-            }.bind(this));
+            }.bind(this)).error(function (){
+                //para un futuro cuando quiera implementar el caso de que un post falle
+            })
+                ;
         },
         getPosts: function () {
             $.ajax({
@@ -51,4 +53,12 @@ new Vue({
             this.getPosts();
         }.bind(this), 10000);
     }
+
 });
+function init() 
+{   console.log("init");
+    $('#postInput').focus(function() {
+  alert( "Handler for .focus() called." );
+});
+}
+

@@ -24,6 +24,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $appends = [
+        'avatar',
+        'profileUrl',
+    ];
     public function getName()
     {
         if($this->first_name && $this->last_name)
@@ -58,4 +62,43 @@ class User extends Authenticatable
         return $this->hasMany('Instyle\Post');
     }
 
+    public function getAvatarAttribute()
+    {
+        return $this->getAvatarUrl();
+    }
+
+    public function index(User $user)
+    {
+        return view('users.index')->withUser($user);
+    }
+
+    public function getProfileUrlAttribute()
+    {
+        return route('profile.index', $this);
+    }
+
+    public function isNot(User $user)
+    {
+        return $this->id !== $user->id;
+    }
+
+    public function isFollowing(User $user)
+    {
+        return $this->following->where('id',$user->id)->count();
+    }
+
+    public function canFollow(User $user)
+    {
+        if ($this->isNot($user))
+        {
+            return false;
+        }
+
+        return !$this->isFollowing($user);
+    }
+
+    public function following()
+    {
+        return $this->belongsToMany('Instyle\Models\User', 'follows', 'user_id', 'follower_id');
+    }
 }
