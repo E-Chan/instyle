@@ -55,10 +55,14 @@ new Vue({
     }
 
 });
-function init() 
-{   console.log("init");
-    $('#postInput').focus(function() {
-  alert( "Handler for .focus() called." );
-});
-}
 
+$("#loginBtn").click(function(){
+    $("#signInBox").slideDown(400);
+    $("#loginBtn").slideUp(400);
+    $("#registerBtn").slideUp(400);
+
+});
+
+$("#signInBox").focusin(function(){
+    jQuery('#signInBox').fadeTo( "slow", 1 );
+});

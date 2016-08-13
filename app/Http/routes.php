@@ -7,6 +7,7 @@
 Route::get('', [
     'uses'  => '\Instyle\Http\Controllers\HomeController@index',
     'as'    => 'home',
+    
     //'middleware' => ['guest'] 
     ]);
 

@@ -42,7 +42,7 @@ class AuthController extends Controller
         ]);
         
         if (!Auth::attempt($request->only(['email','password']),$request->has('remember'))){
-            return redirect()->back()->with('info', 'No se ha encontrado el usuario.');
+            return redirect()->route('auth.signin')->with('info', 'No se ha encontrado el usuario.');
         }
 
         return redirect()->route('home')->with('info', 'Has iniciado sesión.');

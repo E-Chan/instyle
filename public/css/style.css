@@ -1,0 +1,77 @@
+body {
+  background: url(/bg.png) repeat;
+  animation: loader 40s steps(6000) infinite;
+  overflow: hidden;
+}
+
+#photo1 {
+  position: absolute;
+  right: -10%;
+  animation: scrollPhoto 40s steps(6000) infinite;
+}
+#photo1:hover{
+  animation-play-state: paused;
+}
+
+#photo2 {
+  position: absolute;
+  right: -10%;
+  animation: scrollPhoto2 40s steps(6000) infinite;
+}
+#photo2:hover{
+  animation-play-state: paused;
+}
+
+#photo3 {
+  position: absolute;
+  right: -10%;
+  animation: scrollPhoto3 40s steps(6000) infinite;
+}
+#photo3:hover{
+  animation-play-state: paused;
+}
+
+#photo4 {
+  position: absolute;
+  right: -10%;
+  animation: scrollPhoto4 40s steps(6000) infinite;
+}
+#photo4:hover{
+  animation-play-state: paused;
+}
+
+#photo5 {
+  position: absolute;
+  right: -10%;
+  animation: scrollPhoto5 40s steps(6000) infinite;
+}
+#photo5:hover{
+  animation-play-state: paused;
+}
+
+@keyframes scrollPhoto {
+  0% {left: 150%;top: 10%; }
+  100% {left: -15%;top: 50%; transform:rotate(10deg)}
+}
+@keyframes scrollPhoto2 {
+  0% {left: 290%;top: 98%; }
+  100% {left: -15%;top: 35%; transform:rotate(30deg)}
+}
+@keyframes scrollPhoto3 {
+  0% {left: 100%;top: 62%; }
+  100% {left: -15%;top: 13%; transform:rotate(22deg)}
+}
+@keyframes scrollPhoto4 {
+  0% {left: 210%;top: 52%; }
+  100% {left: -15%;top: 45%; transform:rotate(15deg)}
+}
+@keyframes scrollPhoto5 {
+  0% {left: 317%;top: 23%; }
+  100% {left: -15%;top: 98%; transform:rotate(5deg)}
+}
+#noAccount{
+ float: right;
+}
+#signInBox{
+  opacity: 0.7;
+}

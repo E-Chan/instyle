@@ -9,9 +9,11 @@
 
         @if (Auth::user()->isNot($user))
             @if (Auth::user()->isFollowing($user))
-                <p>Unfollow</p>
+                <a class="btn btn-danger btn-xs" href="#">
+                <i class="fa fa-eye-slash"></i> Unfollow</a>
             @else
-                <p>Follow</p>
+                <a class="btn btn-success btn-xs" href="#">
+                <i class="fa fa-eye"></i> Follow</a>
             @endif
         @endif
     </div>

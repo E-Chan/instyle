@@ -1,0 +1,57 @@
+body {
+    background: url(/bg-home.png) repeat-x,
+    url(/bg.png) repeat ;
+    -webkit-animation: loader 40s steps(6000) infinite;
+    -moz-animation: loader 40s steps(6000) infinite;
+    -ms-animation: loader 40s steps(6000) infinite;
+    -o-animation: loader 40s steps(6000) infinite;
+    animation: loader 40s steps(6000) infinite;
+}
+
+@-webkit-keyframes loader {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -1600px 0;
+  }
+}
+@-moz-keyframes loader {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -1600px 0;
+  }
+}
+@-ms-keyframes loader {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -1600px 0;
+  }
+}
+@-o-keyframes loader {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -1600px 0;
+  }
+}
+@keyframes loader {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -1600px 0;
+  }
+}
+#noAccount{
+ float: right;
+}
+#signInBox{
+  opacity: 0.7;
+
+}
