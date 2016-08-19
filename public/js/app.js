@@ -63,6 +63,22 @@ $("#loginBtn").click(function(){
 
 });
 
-$("#signInBox").focusin(function(){
-    jQuery('#signInBox').fadeTo( "slow", 1 );
+
+var form = $('#signInForm').on('lost', function() {
+    console.log('the form lost focus');
+});
+
+$('#input, #input').on({
+  focus: function() {
+        form.data('blurred', false);
+  },
+  blur: function() {
+    form.data('blurred', true);
+    
+        setTimeout(function() {
+        if ( form.data('blurred') ) {
+        form.trigger('lost');
+      }
+    },200)
+  }
 });
