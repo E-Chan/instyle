@@ -61,47 +61,47 @@ $("#loginBtn").click(function(){
     $("#loginBtn").slideUp(400);
     $("#registerBtn").slideUp(400);
 
+
 });
+$("#emailInput").keyup(checkOpacity);
 
+$("#passInput").keyup(checkOpacity);
+function checkOpacity()
+{
+    var chars = $( "#emailInput" ).val().length + $( "#passInput" ).val().length;
+    if (chars) 
+    {
+        $( "#signInBox" ).fadeTo( "slow" , 1)
+        console.log('unfade');
+    }
+    else
+    {
+        $( "#signInBox" ).stop();
+        $( "#signInBox" ).fadeTo( "slow" , 0.5)
+        console.log('fade');
+    }
+};
+// var form = $('#signInForm').on('lost', function() {
+//       $( "#signInBox" ).fadeTo( "slow" , 0.5, function() {
+//     // Animation complete.
+//   });
+// });
 
-var form = $('#signInForm').on('lost', function() {
-      $( "#signInBox" ).fadeTo( "slow" , 0.5, function() {
-    // Animation complete.
-  });
-});
-
-$('#email, #password').on({
-  focus: function() {
-        form.data('blurred', false);
-        $( "#signInBox" ).fadeTo( "slow" , 1, function() {
-        // Animation complete.
-      });
-  },
-  blur: function() {
-    form.data('blurred', true);
+// $('#email, #password, #loginbtn').on({
+//   focus: function() {
+//         form.data('blurred', false);
+//         $( "#signInBox" ).fadeTo( "slow" , 1, function() {
+//         // Animation complete.
+//       });
+//   },
+//   blur: function() {
+//     form.data('blurred', true);
     
-        setTimeout(function() {
-        if ( form.data('blurred') ) {
-        form.trigger('lost');
-      }
-    },200)
-  }
-});
+//         setTimeout(function() {
+//         if ( form.data('blurred') ) {
+//         form.trigger('lost');
+//       }
+//     },200)
+//   }
+// });
 
-$('#signInBox').on({
-  mouseover: function() {
-        form.data('blurred', false);
-        $( "#signInBox" ).fadeTo( "slow" , 1, function() {
-        // Animation complete.
-      });
-  },
-  blur: function() {
-    form.data('blurred', true);
-    
-        setTimeout(function() {
-        if ( form.data('blurred') ) {
-        form.trigger('lost');
-      }
-    },200)
-  }
-});
