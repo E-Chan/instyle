@@ -69,33 +69,35 @@
 --}}
         <br>
         <div id="signInBox" class="well">
-            <form id="signInForm" class="form-vertical" role="form" method="post" action="{{ route('auth.signin')}}">
-                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <label for="email" class="control-label">Email</label>
-                    <input type="text" name="email" class="form-control" id="email">
-                    @if($errors->has('email'))
-                        <span class="help-block">{{ $errors->first('email') }}</span>
-                    @endif
-                </div>
-                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <label for="password" class="control-label">Password</label>
-                    <input type="password" name="password" class="form-control" id="password">
-                    @if($errors->has('password'))
-                        <span class="help-block">{{ $errors->first('password') }}</span>
-                    @endif
-                </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="remember"> Remember me
-                    </label>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-info"> <i class="fa fa-key"></i>Iniciar sesión</button>
-                    <a href="{{ route('auth.signup')}}" id="noAccount" class="btn btn-primary" id="registerBtn">
-                    <i class="fa fa-user-plus"></i> ¿No tienes cuenta?</a>  
-                </div>
-                <input type="hidden" name="_token" value="{{ Session::token()}}">
-            </form>
+            
+                <form id="signInForm" class="form-vertical" role="form" method="post" action="{{ route('auth.signin')}}">
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <label for="email" class="control-label">Email</label>
+                        <input type="text" name="email" class="form-control" id="email">
+                        @if($errors->has('email'))
+                            <span class="help-block">{{ $errors->first('email') }}</span>
+                        @endif
+                    </div>
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <label for="password" class="control-label">Password</label>
+                        <input type="password" name="password" class="form-control" id="password">
+                        @if($errors->has('password'))
+                            <span class="help-block">{{ $errors->first('password') }}</span>
+                        @endif
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="remember"> Remember me
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info"> <i class="fa fa-key"></i>Iniciar sesión</button>
+                        <a href="{{ route('auth.signup')}}" id="noAccount" class="btn btn-primary" id="registerBtn">
+                        <i class="fa fa-user-plus"></i> ¿No tienes cuenta?</a>  
+                    </div>
+                    <input type="hidden" name="_token" value="{{ Session::token()}}">
+                </form>
+            
         </div>
     </div>
     </div>

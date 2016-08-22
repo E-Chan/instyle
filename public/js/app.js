@@ -65,12 +65,35 @@ $("#loginBtn").click(function(){
 
 
 var form = $('#signInForm').on('lost', function() {
-    console.log('the form lost focus');
+      $( "#signInBox" ).fadeTo( "slow" , 0.5, function() {
+    // Animation complete.
+  });
 });
 
-$('#input, #input').on({
+$('#email, #password').on({
   focus: function() {
         form.data('blurred', false);
+        $( "#signInBox" ).fadeTo( "slow" , 1, function() {
+        // Animation complete.
+      });
+  },
+  blur: function() {
+    form.data('blurred', true);
+    
+        setTimeout(function() {
+        if ( form.data('blurred') ) {
+        form.trigger('lost');
+      }
+    },200)
+  }
+});
+
+$('#signInBox').on({
+  mouseover: function() {
+        form.data('blurred', false);
+        $( "#signInBox" ).fadeTo( "slow" , 1, function() {
+        // Animation complete.
+      });
   },
   blur: function() {
     form.data('blurred', true);
