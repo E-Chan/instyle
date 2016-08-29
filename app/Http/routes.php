@@ -71,3 +71,11 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::get('home', 'TimelineController@index');
     Route::post('/posts', 'PostController@create');
 });
+
+  /*---------------*/
+ /*---Followers---*/
+/*---------------*/
+    Route::get('/users/{user}', 'UserController@index')->name('user.index');
+    Route::get('/users/{user}/follow', 'UserController@follow')->name('user.follow');
+    Route::get('/users/{user}/unfollow', 'UserController@unfollow')->name('user.unfollow');
+

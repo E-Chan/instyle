@@ -99,7 +99,18 @@ class User extends Authenticatable
 
     public function following()
     {
-        return $this->belongsToMany('Instyle\Models\User', 'follows', 'user_id', 'follower_id');
+        return $this->belongsToMany('Instyle\User', 'follows', 'user_id', 'follower_id');
+    }
+
+    public function follow(Request $request, User $user)
+    {
+        dd($user);
+/*        if ($request->user()->canFollow($user))
+        {
+            $request->user()->following()->attach($user);
+        }
+
+        return redirect()->back();*/
     }
 }
 
