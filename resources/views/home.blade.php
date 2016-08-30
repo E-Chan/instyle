@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 
-
+                <a href="#" class="btn btn-primary" v-if="total > posts.length" v-on:click="getMorePosts($event)">Show more</a>
                 </div>
             </div>
 

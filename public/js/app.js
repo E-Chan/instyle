@@ -1,9 +1,10 @@
+$postsToLoad = 8;
 new Vue({
     el: '#timeline',
     data: {
         post: '',
         posts: [],
-        limit: 10,
+        limit: $postsToLoad, //post limit fetched in on GET
         total: 0
     },
 
@@ -42,7 +43,7 @@ new Vue({
         getMorePosts: function (e) {
             e.preventDefault();
 
-            this.limit = this.limit + this.limit;
+            this.limit = this.limit + $postsToLoad; //limit
             this.getPosts();
         }
     },
@@ -51,7 +52,7 @@ new Vue({
 
         setInterval(function () {
             this.getPosts();
-        }.bind(this), 5000);
+        }.bind(this), 10000);
     }
 
 });
