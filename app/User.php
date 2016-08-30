@@ -54,7 +54,7 @@ class User extends Authenticatable
     public function getAvatarUrl()
     {
     $hash = md5(strtolower(trim($this->attributes['email'])));
-    return "http://www.gravatar.com/avatar/$hash?d=https://u.pomf.is/maqope.png";
+    return "http://www.gravatar.com/avatar/$hash?d=defaultavatar.png";
     }
 
     public function posts()
@@ -102,6 +102,10 @@ class User extends Authenticatable
         return $this->belongsToMany('Instyle\Models\User', 'follows', 'user_id', 'follower_id');
     }
 
+    public function followers()
+    {
+        return $this->belongsToMany('Instyle\Models\User', 'follows', 'follower_id', 'user_id');
+    }
     public function follow(Request $request, User $user)
     {
         //if ($request->user()->canFollow($user))

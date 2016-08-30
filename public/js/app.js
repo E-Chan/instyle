@@ -3,7 +3,7 @@ new Vue({
     data: {
         post: '',
         posts: [],
-        limit: 2,
+        limit: 10,
         total: 0
     },
 

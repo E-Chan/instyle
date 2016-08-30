@@ -10,6 +10,22 @@ use Instyle\Post;
 
 class PostController extends Controller
 {
+
+    public function index(Request $request, Post $post)
+    {
+        $allPosts = $post->whereIn('user_id', 
+            $request->user()->following()->lists('users.id')->push($request->user()->id) //colection laravel con nuestra ID pusheada
+        )->with('user');
+
+        $posts = $allPosts->orderBy('created_at','desc')
+            ->take($request->get('limit', 20)) //Fetch limit
+            ->get();
+
+        return response()->json([
+            'posts' => $posts,
+            'total' => $allPosts->count(),
+            ]);
+    }
     public function create(Request $request, Post $post)
     {
         $this->validate($request, [
