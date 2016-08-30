@@ -96,6 +96,10 @@ class User extends Authenticatable
 
         return !$this->isFollowing($user);
     }
+    public function canUnfollow(User $user)
+    {
+        return $this->isFollowing($user);
+    }
 
     public function following()
     {
@@ -105,11 +109,20 @@ class User extends Authenticatable
     public function follow(Request $request, User $user)
     {
 
-        if ($request->user()->canFollow($user))
-        {
+        //if ($request->user()->canFollow($user))
+        //{
             $request->user()->following()->attach($user);
+        //}
+
+    return redirect()->back();
+    }
+
+    public function unfollow(Request $request, User $user)
+    {
+        if ($request->user()->canUnfollow($user)) {
+            $request->user()->following()->detach($user);
         }
 
-        //return redirect()->back();
+        return redirect()->back();
     }
 }
