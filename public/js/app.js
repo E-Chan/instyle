@@ -51,7 +51,7 @@ new Vue({
 
         setInterval(function () {
             this.getPosts();
-        }.bind(this), 10000);
+        }.bind(this), 5000);
     }
 
 });
