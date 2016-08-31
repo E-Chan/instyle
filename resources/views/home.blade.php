@@ -13,11 +13,11 @@
                             <textarea id="postInput" class="form-control"  cols="35"  rows="2" maxlength="600" placeholder="¿Que estilo luces hoy?" v-model="post"></textarea>
                         </div>
                     </form>
-                        <button v-if="post.length" style="display: inline;" type="button" class="btn-lg btn-info">
+                        <button  transition="bounce" v-if="post.length" style="display: inline;" type="button" class="btn-lg btn-info">
                         <i class="fa fa-plus-square"></i>
                         <i class="fa fa-picture-o"></i>
                         </button>
-                        <input v-if="post.length" id="postBtn" style="display: inline;" type="submit" value="Submit" class="btn btn-primary btn-block"  v-on:click="postStatus">
+                        <input  transition="bounce" v-if="post.length" id="postBtn" style="display: inline;" type="submit" value="Submit" class="btn btn-primary btn-block"  v-on:click="postStatus">
                 </div>
                 <br><br>
                 <div class="row posts">
@@ -46,16 +46,47 @@
         </div>
         <style>
          .expand-transition {
-            transition: all .5s ease;
+            transition: all .4s ease;
             height: auto;
             overflow: hidden;
         }
 
         .expand-enter, .expand-leave {
-            height: 0;
-            padding: 0 20px;
+        
+            padding: 0 120px;
             opacity: 0;
         }
+    .bounce-transition {
+      display: inline-block; /* otherwise scale animation won't work */
+    }
+    .bounce-enter {
+      animation: bounce-in .3s;
+    }
+    .bounce-leave {
+      animation: bounce-out .3s;
+    }
+    @keyframes bounce-in {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes bounce-out {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
         </style>
     @else
     <div class="row" id="timeline">
