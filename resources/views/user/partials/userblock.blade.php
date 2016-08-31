@@ -1,3 +1,4 @@
+
 <div class="media">
     <a class="pull-left" href="{{ route('profile.index', ['username' => $user->username]) }}">
         <img height="100px" class="media-object" alt="{{ $user->getUsername() }}" src="{{$user->getAvatarUrl()}}">
@@ -18,3 +19,9 @@
         @endif
     </div>
 </div>
+{{-- <!-- 
+<well>
+        @foreach(Auth::user()->posts as $post)
+            {{ $post->title }}
+        @endforeach
+</well> --> --}}

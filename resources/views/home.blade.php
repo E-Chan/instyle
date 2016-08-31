@@ -44,6 +44,19 @@
 
 
         </div>
+        <style>
+         .expand-transition {
+            transition: all .5s ease;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .expand-enter, .expand-leave {
+            height: 0;
+            padding: 0 20px;
+            opacity: 0;
+        }
+        </style>
     @else
     <div class="row" id="timeline">
     <div id="photos">

@@ -106,6 +106,7 @@ class User extends Authenticatable
         return $this->belongsToMany('Instyle\Models\User', 'follows', 'user_id', 'follower_id');
     }
 
+
     public function follow(Request $request, User $user)
     {
 
