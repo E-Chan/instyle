@@ -22,7 +22,7 @@
                 <br><br>
                 <div class="row posts">
                 <p v-if="!posts.length"> <strong>¿No sigues a nadie aún?</strong><br> Utiliza la función de búsqueda en la barra superior y descubre nuevos estilos</p>
-                <div v-if="posts.length"  class="well media" v-for="post in posts" track-by="id">
+                <div v-if="posts.length"  class="well media" transition="expand" v-for="post in posts" track-by="id">
                     <div class="media-left">
                     <img class="media-object" v-bind:src="post.user.avatar">
                     </div>
