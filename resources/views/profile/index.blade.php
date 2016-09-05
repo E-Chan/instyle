@@ -6,7 +6,7 @@
 
     <div class="col-lg-6 col-lg-offset-3">
     <p>Publicaciones de éste usuario:</p> <br>
-    @foreach(Auth::user()->posts as $post)
+    @foreach($user->posts as $post)
     <div class="well">
         <p>{{ $post->user->username }} -{{ $post->relativeCreatedAt}}</p>
         <h4> {{ $post->body}}</h4>
