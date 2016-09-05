@@ -1,11 +1,11 @@
-$postsToLoad = 8;
+$postsToLoad = 20;
 new Vue({
     el: '#timeline',
     data: {
         post: '',
         posts: [],
         limit: $postsToLoad, //post limit fetched in on GET
-        total: 0
+        total: 0,
     },
 
     methods: {

@@ -16,7 +16,7 @@ class PostController extends Controller
         $allPosts = $post->whereIn('user_id', 
             $request->user()->following()->lists('users.id')->push($request->user()->id) //colection laravel con nuestra ID pusheada
         )->with('user');
-
+        $count =  $allPosts->count();
         $posts = $allPosts
         ->groupBy('posts.id')->orderBy('created_at','desc')
              ->take($request->get('limit', 20)) //Fetch limit
@@ -24,7 +24,7 @@ class PostController extends Controller
 
         return response()->json([
             'posts' => $posts,
-            'total' => $allPosts->count(),
+            'total' =>$count,
             ]);
     }
     public function create(Request $request, Post $post)
