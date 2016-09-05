@@ -28,7 +28,7 @@
                     </div>
                     <div class="media-body">
                         <div class="user">
-                             <a href="http://instyle.social/user/@{{ post.user.username }}"><strong>@{{ post.user.username }}</strong></a> - @{{ post.relativeCreatedAt }}
+                             <a href="user/@{{ post.user.username }}"><strong>@{{ post.user.username }}</strong></a> - @{{ post.relativeCreatedAt }}
                     
                         </div>
                         <p>@{{ post.body }}</p>
