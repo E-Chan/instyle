@@ -17,7 +17,7 @@ class PostController extends Controller
             $request->user()->following()->lists('users.id')->push($request->user()->id) //colection laravel con nuestra ID pusheada
         )->with('user');
 
-        $posts = $allPosts;
+        $posts = $allPosts
         //->orderBy('created_at','desc')
              ->take($request->get('limit', 20)) //Fetch limit
              ->get();
