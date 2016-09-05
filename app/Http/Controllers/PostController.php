@@ -18,9 +18,9 @@ class PostController extends Controller
         )->with('user');
 
         $posts = $allPosts;
-        // ->orderBy('created_at','desc')
-        //     ->take($request->get('limit', 20)) //Fetch limit
-        //     ->get();
+        //->orderBy('created_at','desc')
+             ->take($request->get('limit', 20)) //Fetch limit
+             ->get();
 
         return response()->json([
             'posts' => $posts,
