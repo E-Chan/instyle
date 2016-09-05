@@ -13,7 +13,7 @@
                             <textarea id="postInput" class="form-control"  cols="35"  rows="2" maxlength="600" placeholder="¿Que estilo luces hoy?" v-model="post"></textarea>
                         </div>
                     </form>
-                        <button  transition="bounce" v-if="post.length" style="display: inline;" type="button" class="btn-lg btn-info">
+                        <button id="photobtn"  transition="bounce" v-if="post.length" style="display: inline;" type="button" class="btn-lg btn-info">
                         <i class="fa fa-plus-square"></i>
                         <i class="fa fa-picture-o"></i>
                         </button>
@@ -45,6 +45,11 @@
 
         </div>
         <style>
+         #photobtn {
+
+            margin-bottom: 5px;
+
+         }
          .expand-transition {
             transition: all .4s ease;
             height: auto;
