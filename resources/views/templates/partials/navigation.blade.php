@@ -1,12 +1,12 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ route('home')}}"><img height="170%" src="logo.png"></img></a>
+            <a class="navbar-brand" href="{{ route('home')}}"><img height="170%" src="/img/logo.png"></img></a>
         </div>
         <div class="collapse navbar-collapse">
            @if (Auth::check()) 
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Timeline</a></li>
+                    <li><a href="{{ route('home')}}">Timeline</a></li>
                     <li><a href="#">Amigos</a></li>
                 </ul>
                 <form class="navbar-form navbar-left" role="search" action="{{route('search.results')}}">
