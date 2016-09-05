@@ -121,7 +121,7 @@
             
                 <form id="signInForm" class="form-vertical" role="form" method="post" action="{{ route('auth.signin')}}">
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label for="email" class="control-label">Email</label>
+                        <label for="email" class="control-label">Emailll</label>
                         <input id="emailInput" type="text" name="email" class="form-control" id="email">
                         @if($errors->has('email'))
                             <span class="help-block">{{ $errors->first('email') }}</span>
