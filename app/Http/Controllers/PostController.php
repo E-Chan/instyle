@@ -18,7 +18,7 @@ class PostController extends Controller
         )->with('user');
 
         $posts = $allPosts
-        ->groupBy('created_at')->orderBy('created_at','desc')
+        ->groupBy('posts.id')->orderBy('created_at','desc')
              ->take($request->get('limit', 20)) //Fetch limit
              ->get();
 
