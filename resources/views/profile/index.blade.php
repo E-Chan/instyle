@@ -8,7 +8,7 @@
     <p>Publicaciones de éste usuario:</p> <br>
     @foreach($user->posts as $post)
     <div class="well">
-        <p>{{ $post->user->username }} -{{ $post->relativeCreatedAt}}</p>
+        <p>{{ $post->user->username }} - {{ $post->relativeCreatedAt}}</p>
         <h4> {{ $post->body}}</h4>
     </div>
     @endforeach
